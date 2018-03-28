@@ -8,6 +8,6 @@ public class DivideByZero extends Exception
 {
     public DivideByZero() 
     {
-        super("Can Not Divide By Zero");
+        super("Cannot divide by zero");
     }
 }
