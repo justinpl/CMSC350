@@ -2,14 +2,14 @@
  * File Name   : Fractions.java
  * Author      : Justin Luce
  * Created on  : 22-04-2018
- * Description : 
+ * Description : this converts a string into a fraction object and allows a comparison of two fractions
  **/
 public class Fraction implements Comparable<Fraction>
 {
     private String data;
     private int numerator;
     private int denominator;
-   
+    // constructs a fraction object
     public Fraction(String input)
     {
         String[] x = input.split("/");

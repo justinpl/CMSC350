@@ -5,7 +5,7 @@ import javax.swing.*;
  * File Name   : BSTGUI.java
  * Author      : Justin Luce
  * Created on  : 22-04-2018
- * Description : 
+ * Description : This allows a user to input and sort data with a BST
  **/
 public class BSTGUI extends JFrame
 {
@@ -57,17 +57,21 @@ public class BSTGUI extends JFrame
         sortB.addActionListener
             (event -> sortData());
     }
-    //display converted expression
+    //sorts the list
     public void sortData()
     {       
         try
         {
+            //check for input. throw error if empty.
             if (enterInput.getText().isEmpty()==true)
             {
                 throw new NullPointerException();
             }
+            //initialize BST tree
             BST tree;
+            //split input on spaces into array
             String data[] = enterInput.getText().split(" ");
+            // evaluate fractions and insert into tree
             if(fracR.isSelected())
             {
                 tree = new BST(new Fraction(data[0]));
@@ -88,16 +92,19 @@ public class BSTGUI extends JFrame
             } 
             else
             {
+                //insert values into tree
                 tree = new BST(Integer.parseInt(data[0]));
                 for (int i = 1; i < data.length; i++) 
                 {
                     tree.insertData(Integer.parseInt(data[i]));
                 }   
             }
+            // sort from lowest to highest
             if (ascendR.isSelected()) 
             {
                 resultOutput.setText(tree.sortAscend(tree.getRoot()));
             } 
+         // sort from highest to lowest 
             else if (descendR.isSelected()) 
             {
                 resultOutput.setText(tree.sortDescend(tree.getRoot())); 

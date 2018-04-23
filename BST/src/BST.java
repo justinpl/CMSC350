@@ -2,18 +2,19 @@
  * File Name   : BST.java
  * Author      : Justin Luce
  * Created on  : 22-04-2018
- * Description : 
+ * Description : Inserts and sorts data within a Binary Search Tree.
  **/
 public class BST<T extends Comparable<T>>
 {
     private Node<T> root;
     private String output;
-        
+    // constructor for Binary Search Tree    
     public BST(T data) 
     {
         this.root = new Node<T>(data);
         this.output = "";
     }
+    // begins recursive data insert into BST
     void insertData (T data) 
     {
         if (root == null) 
@@ -23,6 +24,7 @@ public class BST<T extends Comparable<T>>
         }
         insertData(data, root);   
     }
+    // compares current value to node and inserts left if less and right if more.
     private void insertData(T data, Node<T> node) 
     {
         if (data.compareTo(node.data) <= 0) 
@@ -48,6 +50,7 @@ public class BST<T extends Comparable<T>>
             }
         }
     }
+    //perform an inorder traversal of the BST and outputs results 
     public String sortAscend(Node<T> node)
     {
         if(node != null)
@@ -58,6 +61,7 @@ public class BST<T extends Comparable<T>>
         }
         return output;
     }
+    //perform a reverse inorder traversal of the BST and outputs results
     public String sortDescend(Node<T> node)
     {
         if(node != null)
@@ -68,11 +72,12 @@ public class BST<T extends Comparable<T>>
         }
         return output;
     }
+    //gets the BST root value
     public Node<T> getRoot()
     {
         return root;
     }
-    
+    // constructor for node objects. Each has a value and can store a value to the left and/or right 
     private class Node<T>
     {
        private T data;
