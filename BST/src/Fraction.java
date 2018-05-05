@@ -1,5 +1,5 @@
 /**
- * File Name   : Fractions.java
+ * File Name   : Fraction.java
  * Author      : Justin Luce
  * Created on  : 22-04-2018
  * Description : this converts a string into a fraction object and allows a comparison of two fractions
